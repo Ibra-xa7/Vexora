@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VEXORA — Your Game. Your Identity.</title>
+<meta name="description" content="VEXORA: custom gaming video edits for Free Fire and eFootball.">
+<meta name="color-scheme" content="dark">
+<style>
+:root{--bg:#080A10;--bg2:#101522;--p:#7657FF;--c:#00D9FF;--m:#A1A7B5;--line:rgba(255,255,255,.09);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.grad{background:linear-gradient(90deg,var(--p),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{color:var(--c);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.btn{display:inline-block;font-weight:700;padding:13px 26px;border-radius:12px;color:#fff;background:linear-gradient(135deg,var(--p),#5b3df0);box-shadow:0 0 24px rgba(118,87,255,.45);transition:.25s transform,.25s box-shadow}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 36px rgba(0,217,255,.45)}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none}.btn.ghost:hover{border-color:var(--c);box-shadow:0 0 20px rgba(0,217,255,.25)}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;text-align:center}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(110px);animation:f 14s ease-in-out infinite}
+.hero:before{width:460px;height:460px;background:var(--p);opacity:.35;top:-120px;left:-100px}
+.hero:after{width:400px;height:400px;background:var(--c);opacity:.22;bottom:-140px;right:-80px;animation-delay:-7s}
+@keyframes f{50%{transform:translate(40px,30px)}}
+.hero .wrap{position:relative;z-index:1}
+.logo{font-family:"Space Grotesk",sans-serif;font-weight:800;letter-spacing:.3em;font-size:1.1rem;margin-bottom:26px}
+.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:800;margin:0 0 20px}
+.hero p{color:var(--m);max-width:520px;margin:0 auto;font-size:1.1rem}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+section{padding:80px 0}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:8px 0 14px}
+.about{text-align:center}.about p{color:var(--m);max-width:620px;margin:0 auto}
+.plans{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:34px;align-items:stretch}
+.plan{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;transition:.3s transform,.3s box-shadow}
+.plan:hover{transform:translateY(-5px)}
+.plan.hot{border-color:var(--p);box-shadow:0 0 40px rgba(118,87,255,.3)}
+.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--p),var(--c));color:#080A10;font-size:.7rem;font-weight:800;letter-spacing:.1em;padding:4px 12px;border-radius:99px;white-space:nowrap}
+.name{color:var(--c);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.price{font-family:"Space Grotesk",sans-serif;font-size:2.6rem;font-weight:800}.price small{font-size:.9rem;color:var(--m);font-weight:400}
+.plan ul{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--m);font-size:.92rem;flex:1}
+.plan li:before{content:"✓ ";color:var(--c);font-weight:700}
+.plan .btn{text-align:center;padding:11px 16px;font-size:.92rem}
+.note{color:var(--m);font-size:.85rem;text-align:center;margin-top:24px}
+.links{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:30px}
+.link{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:2px;transition:.25s transform,.25s border-color,.25s box-shadow}
+.link:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 0 28px rgba(0,217,255,.2)}
+.link b{font-family:"Space Grotesk",sans-serif;font-size:1.1rem}.link span{color:var(--m);font-size:.9rem}
+.ex{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:30px 0}.tile{aspect-ratio:16/10;border:1px dashed var(--line);border-radius:18px;display:grid;place-items:center;color:var(--m);background:linear-gradient(135deg,rgba(118,87,255,.18),rgba(0,217,255,.08))}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--m);text-align:center;font-size:.9rem}
+.rv{opacity:0;transform:translateY(24px);transition:.7s opacity,.7s transform}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="logo">VEXORA</div>
+<h1>YOUR GAME.<br><span class="grad">YOUR IDENTITY.</span></h1>
+<p>Custom gaming edits for Free Fire and eFootball players.</p>
+<div class="cta"><a class="btn" href="#order">Order your edit</a><a class="btn ghost" href="#follow">Follow @vexora.xa</a></div>
+</div></header>
+
+<section class="about rv"><div class="wrap"><span class="eyebrow">About me</span><h2>Hi, I’m Ibrahim</h2>
+<p>I’m the creator behind VEXORA. I edit from my phone, mixing AI-made visuals with classic editing to turn your gaming moments into custom videos — Free Fire character edits, profile showcases, eFootball dream teams and goal compilations.</p></div></section>
+
+<section id="order" class="rv"><div class="wrap" style="text-align:center"><span class="eyebrow">Order</span><h2>Chat with me to order</h2>
+<p style="color:var(--m);max-width:560px;margin:0 auto">Every edit is different, so there are no fixed prices. Message me on Instagram or TikTok, tell me your game and what you want, and we’ll agree on the price together.</p>
+<div class="cta"><a class="btn" href="https://www.instagram.com/vexora.xa" target="_blank" rel="noopener">Chat on Instagram</a><a class="btn ghost" href="https://www.tiktok.com/@vexora.xa" target="_blank" rel="noopener">Chat on TikTok</a></div></div></section>
+
+
+<section id="follow" class="rv"><div class="wrap" style="text-align:center"><span class="eyebrow">Find me</span><h2>@vexora.xa</h2>
+<p style="color:var(--m);margin:0">See my results on the accounts below.</p>
+<div class="links">
+<a class="link" href="https://www.instagram.com/vexora.xa" target="_blank" rel="noopener"><b>Instagram</b><span>@vexora.xa</span></a>
+<a class="link" href="https://www.tiktok.com/@vexora.xa" target="_blank" rel="noopener"><b>TikTok</b><span>@vexora.xa</span></a>
+<a class="link" href="https://www.youtube.com/@vexora-xa" target="_blank" rel="noopener"><b>YouTube</b><span>@vexora.xa</span></a>
+</div></div></section>
+
+<footer>© <span id="y"></span> VEXORA — Your Game. Your Identity.</footer>
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
